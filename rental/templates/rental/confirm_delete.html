@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ยืนยันการลบ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+  <div class="col-md-6 mx-auto">
+    <div class="alert alert-danger text-center">
+      <h4>⚠️ คุณแน่ใจหรือไม่ว่าต้องการลบหนังสือ: <br><strong>{{ book.title }}</strong></h4>
+      <form method="post" class="mt-4">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger me-2">ลบ</button>
+        <a href="{% url 'book_list' %}" class="btn btn-secondary">ยกเลิก</a>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
